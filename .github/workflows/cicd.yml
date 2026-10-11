@@ -43,7 +43,7 @@ jobs:
     - name: update image tags
       run : |
         cd mainfests
-        sed -i "s|image:.*|image:kanna1718/argocd-flask-app:${{ github.sha }}|g" deployment.yml
+        sed -i "s|image: .*|image: kanna1718/argocd-flask-app:${{ github.sha }}|g" deployment.yml
 
     - name: commit and push
       run: |

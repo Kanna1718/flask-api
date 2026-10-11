@@ -35,7 +35,7 @@ jobs:
     - name: write to another repo
       uses: actions/checkout@v4
       with:
-        repository: https://github.com/Kanna1718/argocd
+        repository: Kanna1718/argocd
         token: ${{ secrets.PAT_TOKEN }} 
         path: mainfests
         ref: main

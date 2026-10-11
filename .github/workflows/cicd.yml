@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest 
 
-    premission: 
+    permissions: 
       contents: read
       packagees: write
 

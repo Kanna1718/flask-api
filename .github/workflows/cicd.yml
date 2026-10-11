@@ -37,7 +37,7 @@ jobs:
       with:
         repository: Kanna1718/argocd
         token: ${{ secrets.PAT_TOKEN }} 
-        path: mainfests
+        path: .
         ref: main
       
     - name: update image tags

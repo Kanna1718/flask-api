@@ -1,0 +1,28 @@
+name: argocd
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+
+    premission: 
+      contents: read
+      packagees: write
+
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v4
+
+    - name: image build
+      uses: mr-smithers-excellent/docker-build-push@v7
+      with:
+        image: kanna1718/argocd-flask-app
+        tags: ${{ github.sha }}
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
